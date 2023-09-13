@@ -17,7 +17,6 @@ public class Spinnable : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        SetSpinning(false, Vector3.zero);
     }
 
     // Update is called once per frame
