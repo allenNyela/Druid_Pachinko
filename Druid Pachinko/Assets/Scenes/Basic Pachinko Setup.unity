@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spinnable Object
       objectReference: {fileID: 0}
+    - target: {fileID: 5235635377128383754, guid: f709aa5f3723bc64cac012c10f7ee83d, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 7489958655233274595, guid: f709aa5f3723bc64cac012c10f7ee83d, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.29999998
