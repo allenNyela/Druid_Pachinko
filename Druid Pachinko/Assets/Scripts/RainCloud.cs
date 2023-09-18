@@ -17,6 +17,18 @@ public class RainCloud : MonoBehaviour
     private float rainDropTimer = 0;
     [SerializeField, Tooltip("If a raindrop should start immediately at the beginning of the game. \n If marked false, will have spawn delay before spawning the first raindrop")]private bool spawnRainDropOnGameStart = false;
     [SerializeField, Tooltip("The transform the raindrop should be spawned from. Uses this object's transform by default")]private Transform rainSpawnTransform;    
+
+    [Header("Pollution Fields")]
+    [SerializeField, Tooltip("the prefab for the pollution drop")]private GameObject pollutionDropPrefab;
+    [SerializeField, Tooltip("The number of raindrops that must fall at the start of the game before any polluted drops can fall. \nIf <=0, then pollution drops are able to fall from the very start of the game")]private int rainNeededBeforePollution = 5;
+    private bool canPollutionSpawn = false;
+    [SerializeField, Tooltip("the number of raindrops that must fall after a pollution drop falls before another is able to fall. \nIf <=0, then pollution drops always have a chance to fall once the first has fallen")]private int rainNeededBetweenPollution = 1;
+    private float prevRainCount = 0;
+    [SerializeField, Tooltip("the percent chance for a polluted drop to spawn at the start of the game")]private float pollutionChance = .05f;
+    [SerializeField, Tooltip("the rate at which the pollution spawn chance increases per second")]private float pollutionChanceIncrease = .001f;
+    [SerializeField, Tooltip("The maximum pollution spawn chance")]private float maxPollutionChance = .4f;
+    
+
     private void Start() {
         if(!rainSpawnTransform){
             rainSpawnTransform = transform;
@@ -38,7 +50,17 @@ public class RainCloud : MonoBehaviour
     }
 
     public void SpawnRainDrop(){
-        Instantiate(rainDropPrefab, rainSpawnTransform.position, Quaternion.identity);
+        if(!canPollutionSpawn && prevRainCount >= rainNeededBeforePollution){
+            canPollutionSpawn = true;
+        }
+        if(canPollutionSpawn && prevRainCount >= rainNeededBetweenPollution && Random.Range(0.0f,1.0f) <= pollutionChance){
+            Instantiate(pollutionDropPrefab, rainSpawnTransform.position, Quaternion.identity);
+            prevRainCount = 0;
+        }
+        else{
+            Instantiate(rainDropPrefab, rainSpawnTransform.position, Quaternion.identity);
+            prevRainCount++;
+        }
         rainDropTimer = rainDropSpawnDelay;
     }
 
@@ -60,7 +82,7 @@ public class RainCloud : MonoBehaviour
         if(rainDropTimer <= 0){
             SpawnRainDrop();
         }
-        
+        pollutionChance = Mathf.Min(pollutionChance+(pollutionChanceIncrease * Time.fixedDeltaTime), maxPollutionChance);
 
     }
 }

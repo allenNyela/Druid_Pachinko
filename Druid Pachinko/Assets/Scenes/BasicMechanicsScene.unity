@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2145,67 +2145,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &276881674098072643
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2217292954965617466, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_Name
-      value: Rain Drop
-      objectReference: {fileID: 0}
-    - target: {fileID: 2217292954965617466, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037413558404132458, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037413558404132458, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037413558404132458, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037413558404132458, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037413558404132458, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037413558404132458, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037413558404132458, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037413558404132458, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037413558404132458, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037413558404132458, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 07e8eb6076be7144d82ffe16db65f455, type: 3}
 --- !u!1001 &341302997937880073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2584,6 +2523,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab8228a4d011f914abb82c194d94d886, type: 3}
+--- !u!1001 &6530707784178744505
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1360820746034144885, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360820746034144885, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360820746034144885, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360820746034144885, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360820746034144885, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360820746034144885, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360820746034144885, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360820746034144885, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360820746034144885, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360820746034144885, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894274871916061477, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
+      propertyPath: m_Name
+      value: Rain Drop
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
 --- !u!1001 &7535721562375495942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2649,6 +2645,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2483983024577632717, guid: cbdcb4ec4c159d84a839d3cf7e9f9d77, type: 3}
+      propertyPath: pollutionDropPrefab
+      value: 
+      objectReference: {fileID: 7894274871916061477, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
     - target: {fileID: 5916240177227080797, guid: cbdcb4ec4c159d84a839d3cf7e9f9d77, type: 3}
       propertyPath: m_Name
       value: Rain Cloud
@@ -2704,7 +2704,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1337265016}
   - {fileID: 1835141742}
-  - {fileID: 276881674098072643}
+  - {fileID: 6530707784178744505}
   - {fileID: 7535721562375495942}
   - {fileID: 341302997937880073}
   - {fileID: 8659142922288599654}
