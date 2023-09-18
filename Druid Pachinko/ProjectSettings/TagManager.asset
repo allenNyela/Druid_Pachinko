@@ -7,6 +7,7 @@ TagManager:
   - RainDrop
   - Rain Cloud
   - Plant
+  - PollutionDrop
   layers:
   - Default
   - TransparentFX
