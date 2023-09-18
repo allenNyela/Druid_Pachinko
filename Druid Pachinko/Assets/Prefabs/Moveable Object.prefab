@@ -498,6 +498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMoveSpeed: 20
+  canSpin: 0
+  canSpinWhileDragging: 0
 --- !u!1 &8465662942508207596
 GameObject:
   m_ObjectHideFlags: 0
