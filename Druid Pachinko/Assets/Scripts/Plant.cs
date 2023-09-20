@@ -14,9 +14,6 @@ public class Plant : MonoBehaviour
     }
 
     [SerializeField]
-    private bool isThirsty;
-
-    [SerializeField]
     private PlantState state;
 
     [SerializeField, Tooltip("The amount of time in seconds a plant can be thirsty before wilting.")]
@@ -35,13 +32,31 @@ public class Plant : MonoBehaviour
     private int score;
 
     [SerializeField, Tooltip("The amount of money recieved for harvesting while ripe")]
-    private int money;
+    private int moneyFromHarvest;
+
+    [SerializeField, Tooltip("The money cost to purchase this plant from the shop.")]
+    public int marketPrice;
+
+    [SerializeField, Tooltip("The HP of a plant (number of times it can be polluted before wilting)")]
+    private int health;
+
+    private int pointsLostPerPollution;
+    private int moneyLostPerPollution;
 
     void Start()
     {
-        isThirsty = true;
         state = PlantState.Seed;
         timeSinceWater = 0;
+
+        if (health > 0)
+        {
+            pointsLostPerPollution = score / health;
+            moneyLostPerPollution = moneyFromHarvest / health;
+        } else
+        {
+            pointsLostPerPollution = score;
+            moneyLostPerPollution = moneyFromHarvest;
+        }
     }
 
     // Update is called once per frame
@@ -69,15 +84,19 @@ public class Plant : MonoBehaviour
         Harvest();
     }
 
-    public void WaterPlant()
+    public void WaterPlant(int points, bool waterIsHealthy)
     {
+        if (!waterIsHealthy) 
+        {
+            PolluteThyself();
+            return;
+        }
+
         // Dead plants can't drink, silly
         if (state == PlantState.Wilted)
             return;
         else
         {
-            isThirsty = false;
-
             switch (state)
             {
                 case PlantState.Seed:
@@ -101,16 +120,27 @@ public class Plant : MonoBehaviour
         }
     }
 
+    void PolluteThyself() 
+    {
+        health--;
+        score -= pointsLostPerPollution;
+        moneyFromHarvest -= moneyLostPerPollution;
+
+        if (health < 0)
+            state = PlantState.Wilted;
+    }
+
     public void Harvest()
     {
         // Only add score/money if harvested plant is ripe. Otherwise, just destroy it.
         if (state == PlantState.Ripe)
         {
-            GameManager.Instance.AddMoney(money);
+            GameManager.Instance.AddMoney(moneyFromHarvest);
             GameManager.Instance.IncreaseScore(score);
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
+        else if (state == PlantState.Wilted)
+            Destroy(gameObject);
     }
 
     void CheckTimer()
@@ -122,6 +152,5 @@ public class Plant : MonoBehaviour
 
         // double check that we're not still thirsty (should only get here if thirsty, just in case).
         state = PlantState.Wilted;
-        isThirsty = false;
     }
 }
