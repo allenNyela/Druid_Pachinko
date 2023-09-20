@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2a8a97372f7a3674d9b12742c330c089
+  - enabled: 1
+    path: Assets/Scenes/Basic Pachinko Setup.unity
+    guid: 77dea48e4a6b74d458ecee4cfff180a1
   m_configObjects: {}
