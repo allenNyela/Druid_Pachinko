@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1016,7 +1016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786175406058508822, guid: 6b61ea90b7ca3cf47b29af7a0ec1819a, type: 3}
       propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5786175406058508822, guid: 6b61ea90b7ca3cf47b29af7a0ec1819a, type: 3}
       propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1704,8 +1704,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 228, y: 25}
-  m_SizeDelta: {x: 300, y: 40}
+  m_AnchoredPosition: {x: 228, y: 5}
+  m_SizeDelta: {x: 50, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593645553
 MonoBehaviour:
@@ -1750,7 +1750,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 593645554}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1065976779}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: BuyPlant
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3755864497870549026, guid: 8efc096a112761a47a9fb687b140b2e3, type: 3}
+          m_ObjectArgumentAssemblyTypeName: Plant, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &593645554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1771,7 +1783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1821c47a01c3df642a1e67b26b17c6de, type: 3}
+  m_Sprite: {fileID: 214599309, guid: 1821c47a01c3df642a1e67b26b17c6de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3449,7 +3461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786175406058508822, guid: 6b61ea90b7ca3cf47b29af7a0ec1819a, type: 3}
       propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5786175406058508822, guid: 6b61ea90b7ca3cf47b29af7a0ec1819a, type: 3}
       propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -3709,6 +3721,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065916857}
   m_CullTransparentMesh: 1
+--- !u!1 &1065976778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1065976780}
+  - component: {fileID: 1065976779}
+  m_Layer: 0
+  m_Name: ShopManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1065976779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065976778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3bc1bd5fb781244803bdaf00ff8db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedPlant: {fileID: 0}
+  sunflowerPrefab: {fileID: 3755864497870549026, guid: 17b9e5bb200b64a49b9a6c67299db552, type: 3}
+  mushroomPrefab: {fileID: 3755864497870549026, guid: 01e015d5074658d47b49ddbd51b89f2b, type: 3}
+  pitcherPrefab: {fileID: 3755864497870549026, guid: 8efc096a112761a47a9fb687b140b2e3, type: 3}
+--- !u!4 &1065976780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065976778}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8575249, y: -1.7915051, z: 13.587138}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1080584277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6147280199831025427, guid: ab8228a4d011f914abb82c194d94d886, type: 3}
@@ -3864,12 +3924,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 200, y: 900}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -4176,8 +4236,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 89.1, y: 112}
-  m_SizeDelta: {x: 300, y: 40}
+  m_AnchoredPosition: {x: 87.6, y: 95.1}
+  m_SizeDelta: {x: 50, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223588413
 MonoBehaviour:
@@ -4222,7 +4282,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1223588414}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1065976779}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: BuyPlant
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3755864497870549026, guid: 01e015d5074658d47b49ddbd51b89f2b, type: 3}
+          m_ObjectArgumentAssemblyTypeName: Plant, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1223588414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4243,7 +4315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1821c47a01c3df642a1e67b26b17c6de, type: 3}
+  m_Sprite: {fileID: 214599309, guid: 1821c47a01c3df642a1e67b26b17c6de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4614,7 +4686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786175406058508822, guid: 6b61ea90b7ca3cf47b29af7a0ec1819a, type: 3}
       propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5786175406058508822, guid: 6b61ea90b7ca3cf47b29af7a0ec1819a, type: 3}
       propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4787,8 +4859,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65.7, y: 85}
-  m_SizeDelta: {x: 300, y: 40}
+  m_AnchoredPosition: {x: -65.7, y: 71.3}
+  m_SizeDelta: {x: 50, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1430114177
 MonoBehaviour:
@@ -4833,7 +4905,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1430114178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1065976779}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: BuyPlant
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3755864497870549026, guid: 17b9e5bb200b64a49b9a6c67299db552, type: 3}
+          m_ObjectArgumentAssemblyTypeName: Plant, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1430114178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4854,7 +4938,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1821c47a01c3df642a1e67b26b17c6de, type: 3}
+  m_Sprite: {fileID: 214599309, guid: 1821c47a01c3df642a1e67b26b17c6de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5759,6 +5843,11 @@ MonoBehaviour:
   GameOverMenu: {fileID: 319106923}
   GameOverMenu2: {fileID: 0}
   gameOverScoreText: {fileID: 538182363}
+  plantHolders:
+  - {fileID: 248618898}
+  - {fileID: 1046763079}
+  - {fileID: 1785720359}
+  - {fileID: 342739573}
 --- !u!4 &1779326738
 Transform:
   m_ObjectHideFlags: 0
@@ -5808,7 +5897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786175406058508822, guid: 6b61ea90b7ca3cf47b29af7a0ec1819a, type: 3}
       propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5786175406058508822, guid: 6b61ea90b7ca3cf47b29af7a0ec1819a, type: 3}
       propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6607,3 +6696,4 @@ SceneRoots:
   - {fileID: 175003632}
   - {fileID: 2011131448}
   - {fileID: 1779326738}
+  - {fileID: 1065976780}

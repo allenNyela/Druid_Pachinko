@@ -27,20 +27,20 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     private Plant storedPlant = null;
 
-    [SerializeField]
-    private Button buySunflowerButton;
+    //[SerializeField]
+    //private Button buySunflowerButton;
 
     [SerializeField] 
     private Plant sunflowerPrefab;
 
-    [SerializeField]
-    private Button buyMushroomButton;
+    //[SerializeField]
+    //private Button buyMushroomButton;
 
     [SerializeField]
     private Plant mushroomPrefab;
 
-    [SerializeField]
-    private Button buyPitcherButton;
+    //[SerializeField]
+    //private Button buyPitcherButton;
 
     [SerializeField]
     private Plant pitcherPrefab;
@@ -48,9 +48,14 @@ public class ShopManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        buySunflowerButton.interactable = CheckCanPurchase(sunflowerPrefab);
-        buyMushroomButton.interactable = CheckCanPurchase(mushroomPrefab);
-        buyPitcherButton.interactable = CheckCanPurchase(pitcherPrefab);
+        //buySunflowerButton.interactable = CheckCanPurchase(sunflowerPrefab);
+        //buyMushroomButton.interactable = CheckCanPurchase(mushroomPrefab);
+        //buyPitcherButton.interactable = CheckCanPurchase(pitcherPrefab);
+    }
+
+    public bool HasStoredPlant()
+    {
+        return storedPlant != null;
     }
 
     private bool CheckCanPurchase(Plant aPlant)

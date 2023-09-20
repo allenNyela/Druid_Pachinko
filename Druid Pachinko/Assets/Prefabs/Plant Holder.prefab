@@ -60,7 +60,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7642102925212649320}
     - target: {fileID: 5673259437210185628, guid: df3cafee7cd6f5a4883987e68cbbc0c7, type: 3}
+      propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7642102925212649320}
+    - target: {fileID: 5673259437210185628, guid: df3cafee7cd6f5a4883987e68cbbc0c7, type: 3}
       propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5673259437210185628, guid: df3cafee7cd6f5a4883987e68cbbc0c7, type: 3}
+      propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5673259437210185628, guid: df3cafee7cd6f5a4883987e68cbbc0c7, type: 3}
@@ -68,11 +76,23 @@ PrefabInstance:
       value: WaterPlants
       objectReference: {fileID: 0}
     - target: {fileID: 5673259437210185628, guid: df3cafee7cd6f5a4883987e68cbbc0c7, type: 3}
+      propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: WaterPlants
+      objectReference: {fileID: 0}
+    - target: {fileID: 5673259437210185628, guid: df3cafee7cd6f5a4883987e68cbbc0c7, type: 3}
       propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlantHolder, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5673259437210185628, guid: df3cafee7cd6f5a4883987e68cbbc0c7, type: 3}
+      propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlantHolder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5673259437210185628, guid: df3cafee7cd6f5a4883987e68cbbc0c7, type: 3}
       propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5673259437210185628, guid: df3cafee7cd6f5a4883987e68cbbc0c7, type: 3}
+      propertyPath: ballCaught.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6175632745307986638, guid: df3cafee7cd6f5a4883987e68cbbc0c7, type: 3}
@@ -184,7 +204,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.024135351, y: 0.11131814}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -195,7 +215,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.457008, y: 1.2226362}
   m_EdgeRadius: 0
 --- !u!4 &8186356971313825814 stripped
 Transform:
