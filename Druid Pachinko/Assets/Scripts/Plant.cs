@@ -43,10 +43,14 @@ public class Plant : MonoBehaviour
     private int pointsLostPerPollution;
     private int moneyLostPerPollution;
 
+    private Animator myAnimator;
+
     void Start()
     {
         state = PlantState.Seed;
         timeSinceWater = 0;
+
+        myAnimator = GetComponent<Animator>();
 
         if (health > 0)
         {
@@ -66,12 +70,16 @@ public class Plant : MonoBehaviour
         switch (state)
         {
             case PlantState.Seed:
+                myAnimator.SetInteger("GrowState", 0);
                 break;
             case PlantState.Growing:
+                myAnimator.SetInteger("GrowState", currentGrowingStage);
                 break;
             case PlantState.Ripe:
+                myAnimator.SetInteger("GrowState", currentGrowingStage);
                 break;
             case PlantState.Wilted:
+                myAnimator.SetTrigger("Wilted");
                 break;
         }
 
@@ -108,7 +116,10 @@ public class Plant : MonoBehaviour
                     if (currentGrowingStage < numGrowingStages)
                         currentGrowingStage++;
                     else
+                    {
                         state = PlantState.Ripe;
+                        currentGrowingStage++;
+                    }
 
                     break;
                 default:
