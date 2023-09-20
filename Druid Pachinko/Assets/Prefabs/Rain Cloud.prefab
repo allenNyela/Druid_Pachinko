@@ -107,7 +107,7 @@ MonoBehaviour:
   rainDropSpawnDelay: 2
   spawnRainDropOnGameStart: 0
   rainSpawnTransform: {fileID: 6626469051019397756}
-  pollutionDropPrefab: {fileID: 0}
+  pollutionDropPrefab: {fileID: 7894274871916061477, guid: c6644c18b1417fa4394575ebaefab6dc, type: 3}
   rainNeededBeforePollution: 5
   rainNeededBetweenPollution: 1
   pollutionChance: 0.05

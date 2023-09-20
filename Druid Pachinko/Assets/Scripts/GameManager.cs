@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     /// <summary>
@@ -121,9 +120,9 @@ public class GameManager : MonoBehaviour
     }
 
     private void UpdateScoreText(){
-        scoreText.text = "Score: " + currentScore;
+        scoreText.text = currentScore.ToString();
     }
     private void UpdateMoneyText(){
-        scoreText.text = "Money: " + currentMoney;
+        moneyText.text = currentMoney.ToString();
     }
 }
