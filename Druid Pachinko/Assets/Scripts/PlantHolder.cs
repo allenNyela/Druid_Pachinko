@@ -26,4 +26,9 @@ public class PlantHolder : MonoBehaviour
         
         plantsHeld.Add(Instantiate(plant2Plant, spawnPoint.transform.position, spawnPoint.transform.rotation));
     }
+
+    public bool HasPlant()
+    {
+        return plantsHeld.Count > 0;
+    }
 }
