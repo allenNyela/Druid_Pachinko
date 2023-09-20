@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <param name="score">the amount to increase the score by</param>
     public void IncreaseScore(int score, bool isPositive = true){
+        Debug.Log("added points");
         if(isPositive){
             currentScore += score;
         }

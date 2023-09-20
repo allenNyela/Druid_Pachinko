@@ -29,8 +29,8 @@ public class PachinkoCatchArea : MonoBehaviour
             Destroy(other.gameObject);
 
         }
-        if(other.gameObject.tag == pollutionDropTag){
-            ballCaught.Invoke(-points, false);
+        else if(other.gameObject.tag == pollutionDropTag){
+            ballCaught.Invoke(points, false);
             Destroy(other.gameObject);
 
         }
