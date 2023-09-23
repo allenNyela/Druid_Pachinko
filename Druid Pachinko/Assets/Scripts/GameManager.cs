@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentMoney < lowestPlantCost && !CheckForActivePlants()){
+        if(currentMoney < lowestPlantCost && !CheckForActivePlants() && !gameOver){
             GameOver();
         }
     }
@@ -168,7 +168,8 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         gameOverScoreText.text = "Final Score: " + currentScore;
         GameOverMenu.SetActive(true);
-        if(GameOverMenu2){
+        AudioManager.Instance.FXDefeat();
+        if (GameOverMenu2){
             GameOverMenu2.SetActive(true);
         }
     }

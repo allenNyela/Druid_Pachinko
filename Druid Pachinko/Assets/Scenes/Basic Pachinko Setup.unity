@@ -1398,6 +1398,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab8228a4d011f914abb82c194d94d886, type: 3}
+--- !u!1001 &507326894
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5597023705467957384, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854295194269930145, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.629687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854295194269930145, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3429418
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854295194269930145, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7435665
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854295194269930145, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854295194269930145, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854295194269930145, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854295194269930145, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854295194269930145, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854295194269930145, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854295194269930145, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+--- !u!114 &507326895 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5286872357728618550, guid: b7685a4cf8b7dcc40a5160c4d193bb75, type: 3}
+  m_PrefabInstance: {fileID: 507326894}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193fc85d750eaf3418658901cf153bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &538182361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,8 +1772,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 228, y: 5}
-  m_SizeDelta: {x: 50, y: 5}
+  m_AnchoredPosition: {x: 230, y: 5}
+  m_SizeDelta: {x: 67.39, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593645553
 MonoBehaviour:
@@ -1758,6 +1826,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 3755864497870549026, guid: 8efc096a112761a47a9fb687b140b2e3, type: 3}
           m_ObjectArgumentAssemblyTypeName: Plant, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 507326895}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: FXButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4236,8 +4316,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87.6, y: 95.1}
-  m_SizeDelta: {x: 50, y: 5}
+  m_AnchoredPosition: {x: 85.2, y: 95.1}
+  m_SizeDelta: {x: 67.39, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223588413
 MonoBehaviour:
@@ -4290,6 +4370,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 3755864497870549026, guid: 01e015d5074658d47b49ddbd51b89f2b, type: 3}
           m_ObjectArgumentAssemblyTypeName: Plant, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 507326895}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: FXButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4859,8 +4951,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65.7, y: 71.3}
-  m_SizeDelta: {x: 50, y: 5}
+  m_AnchoredPosition: {x: -70.92146, y: 71.3}
+  m_SizeDelta: {x: 67.395, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1430114177
 MonoBehaviour:
@@ -4913,6 +5005,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 3755864497870549026, guid: 17b9e5bb200b64a49b9a6c67299db552, type: 3}
           m_ObjectArgumentAssemblyTypeName: Plant, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 507326895}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: FXButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6697,3 +6801,4 @@ SceneRoots:
   - {fileID: 2011131448}
   - {fileID: 1779326738}
   - {fileID: 1065976780}
+  - {fileID: 507326894}

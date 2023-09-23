@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
-    enum PlantState
+    public enum PlantState
     {
         Seed,
         Growing,
         Ripe,
+        Harvested,
         Wilted
     }
 
@@ -39,6 +40,8 @@ public class Plant : MonoBehaviour
 
     [SerializeField, Tooltip("The HP of a plant (number of times it can be polluted before wilting)")]
     private int health;
+
+    public PlantHolder plantHolder;
 
     private int pointsLostPerPollution;
     private int moneyLostPerPollution;
@@ -148,10 +151,21 @@ public class Plant : MonoBehaviour
         {
             GameManager.Instance.AddMoney(moneyFromHarvest);
             GameManager.Instance.IncreaseScore(score);
+            AudioManager.Instance.FXPlant();
             Destroy(gameObject);
+            plantHolder.Harvest();
         }
         else if (state == PlantState.Wilted)
+        {
             Destroy(gameObject);
+            AudioManager.Instance.FXPlant();
+            plantHolder.Harvest();
+        }
+    }
+
+    public PlantState GetState()
+    {
+        return state;
     }
 
     void CheckTimer()

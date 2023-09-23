@@ -17,14 +17,21 @@ public class PlantHolder : MonoBehaviour
             p.WaterPlant(points, waterIsHealthy);
     }
 
+    public void Harvest()
+    {
+        plantsHeld.Clear();
+    }
+
     private void OnMouseDown()
     {
         if (plantsHeld.Count > 0)
             return;
         
         Plant plant2Plant = ShopManager.Instance.plantPlant();
-        
-        plantsHeld.Add(Instantiate(plant2Plant, spawnPoint.transform.position, spawnPoint.transform.rotation));
+        AudioManager.Instance.FXPlant();
+        Plant plant2actuallyPlant = Instantiate(plant2Plant, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        plant2actuallyPlant.plantHolder = this;
+        plantsHeld.Add(plant2actuallyPlant);
     }
 
     public bool HasPlant()

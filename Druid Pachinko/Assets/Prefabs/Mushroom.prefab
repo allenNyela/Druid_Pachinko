@@ -50,12 +50,13 @@ MonoBehaviour:
   state: 0
   timeToWilt: 45
   timeSinceWater: 0
-  numGrowingStages: 4
+  numGrowingStages: 3
   currentGrowingStage: 0
   score: 15
   moneyFromHarvest: 15
   marketPrice: 12
   health: 0
+  plantHolder: {fileID: 0}
 --- !u!136 &4335586699085785978
 CapsuleCollider:
   m_ObjectHideFlags: 0
