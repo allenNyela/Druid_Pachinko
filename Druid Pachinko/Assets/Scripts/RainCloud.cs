@@ -50,6 +50,9 @@ public class RainCloud : MonoBehaviour
     }
 
     public void SpawnRainDrop(){
+        if(!GameManager.Instance.isPlaying()){
+            return;
+        }
         if(!canPollutionSpawn && prevRainCount >= rainNeededBeforePollution){
             canPollutionSpawn = true;
         }

@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.5, y: 0.16018057, z: 1}
-  m_Center: {x: 0, y: -0.41990972, z: 0}
+  m_Size: {x: 5.1436114, y: 0.16018055, z: 1}
+  m_Center: {x: 0.035638362, y: -0.41990972, z: 0}
 --- !u!212 &4788399204971189724
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -134,8 +134,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -5.62, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1759892272910979595}
   m_Father: {fileID: 0}
@@ -159,8 +159,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.5, y: 0.29191732, z: 1}
-  m_Center: {x: 0, y: -0.2470057, z: 0}
+  m_Size: {x: 5.1436114, y: 0.29191732, z: 1}
+  m_Center: {x: 0.035638362, y: -0.2470057, z: 0}
 --- !u!114 &2340927061669320482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
-  pachinkoBallTag: RainDrop
+  rainDropTag: RainDrop
+  pollutionDropTag: PollutionDrop
   ballCaught:
     m_PersistentCalls:
       m_Calls: []

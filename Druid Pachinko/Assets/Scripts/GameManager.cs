@@ -2,14 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField, Tooltip("the current score")]private int currentScore = 0;
+    [SerializeField, Tooltip("starting money")]private int startingMoney = 5;
     [SerializeField, Tooltip("the current money")]private int currentMoney = 0;
+    [SerializeField, Tooltip("the lowest cost for a plant")]private int lowestPlantCost = 5;
     [SerializeField, Tooltip("the text box for the player's score")]private TMP_Text scoreText;
     [SerializeField, Tooltip("the text box for the player's money")]private TMP_Text moneyText;
+    [SerializeField, Tooltip("the game over menu")]private GameObject GameOverMenu;
+    [SerializeField, Tooltip("the game over menu")]private GameObject GameOverMenu2;
+    [SerializeField, Tooltip("the game over score text field")]private TMP_Text gameOverScoreText;
+    private bool gameOver = false;
     private static GameManager _instance;
+    public List<PlantHolder> plantHolders;
     public static GameManager Instance
     {
         get{
@@ -29,7 +37,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentMoney = 0;
+        GameOverMenu.SetActive(false);
+        if(GameOverMenu2){
+            GameOverMenu2.SetActive(false);
+        }
+        currentMoney = startingMoney;
         currentScore = 0;
         UpdateMoneyText();
         UpdateScoreText();
@@ -38,7 +50,26 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(currentMoney < lowestPlantCost && !CheckForActivePlants() && !gameOver){
+            GameOver();
+        }
+    }
+
+    public bool CheckForActivePlants(){
+        bool hasPlants = false;
+
+        foreach (PlantHolder holder in plantHolders)
+        {
+            if (holder.HasPlant())
+                hasPlants = true;
+        }
+
+        ShopManager manager = ShopManager.Instance;
+
+        if (manager.HasStoredPlant())
+            hasPlants = true;
+
+        return hasPlants;
     }
 
     /// <summary>
@@ -65,8 +96,14 @@ public class GameManager : MonoBehaviour
     /// adds the given amount to the player's score
     /// </summary>
     /// <param name="score">the amount to increase the score by</param>
-    public void IncreaseScore(int score){
-        currentScore += score;
+    public void IncreaseScore(int score, bool isPositive = true){
+        Debug.Log("added points");
+        if(isPositive){
+            currentScore += score;
+        }
+        else{
+            currentScore -= score;
+        }
         UpdateScoreText();
     }
 
@@ -121,9 +158,34 @@ public class GameManager : MonoBehaviour
     }
 
     private void UpdateScoreText(){
-        scoreText.text = "Score: " + currentScore;
+        scoreText.text = currentScore.ToString();
     }
     private void UpdateMoneyText(){
-        scoreText.text = "Money: " + currentMoney;
+        moneyText.text = currentMoney.ToString();
+    }
+
+    private void GameOver(){
+        gameOver = true;
+        gameOverScoreText.text = "Final Score: " + currentScore;
+        GameOverMenu.SetActive(true);
+        AudioManager.Instance.FXDefeat();
+        if (GameOverMenu2){
+            GameOverMenu2.SetActive(true);
+        }
+    }
+
+    public bool isPlaying(){
+        return !gameOver;
+    }
+
+    public void Restart(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Menu(){
+        SceneManager.LoadScene(0);
+    }
+    public void Quit(){
+        Application.Quit();
     }
 }
