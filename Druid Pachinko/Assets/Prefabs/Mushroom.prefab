@@ -54,7 +54,7 @@ MonoBehaviour:
   currentGrowingStage: 0
   score: 15
   moneyFromHarvest: 15
-  marketPrice: 12
+  marketPrice: 8
   health: 0
   plantHolder: {fileID: 0}
 --- !u!136 &4335586699085785978
