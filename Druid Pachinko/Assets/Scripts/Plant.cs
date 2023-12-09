@@ -5,16 +5,14 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
-    enum PlantState
+    public enum PlantState
     {
         Seed,
         Growing,
         Ripe,
+        Harvested,
         Wilted
     }
-
-    [SerializeField]
-    private bool isThirsty;
 
     [SerializeField]
     private PlantState state;
@@ -35,13 +33,37 @@ public class Plant : MonoBehaviour
     private int score;
 
     [SerializeField, Tooltip("The amount of money recieved for harvesting while ripe")]
-    private int money;
+    private int moneyFromHarvest;
+
+    [SerializeField, Tooltip("The money cost to purchase this plant from the shop.")]
+    public int marketPrice;
+
+    [SerializeField, Tooltip("The HP of a plant (number of times it can be polluted before wilting)")]
+    private int health;
+
+    public PlantHolder plantHolder;
+
+    private int pointsLostPerPollution;
+    private int moneyLostPerPollution;
+
+    private Animator myAnimator;
 
     void Start()
     {
-        isThirsty = true;
         state = PlantState.Seed;
         timeSinceWater = 0;
+
+        myAnimator = GetComponent<Animator>();
+
+        if (health > 0)
+        {
+            pointsLostPerPollution = score / health;
+            moneyLostPerPollution = moneyFromHarvest / health;
+        } else
+        {
+            pointsLostPerPollution = score;
+            moneyLostPerPollution = moneyFromHarvest;
+        }
     }
 
     // Update is called once per frame
@@ -51,12 +73,16 @@ public class Plant : MonoBehaviour
         switch (state)
         {
             case PlantState.Seed:
+                myAnimator.SetInteger("GrowState", 0);
                 break;
             case PlantState.Growing:
+                myAnimator.SetInteger("GrowState", currentGrowingStage);
                 break;
             case PlantState.Ripe:
+                myAnimator.SetInteger("GrowState", currentGrowingStage);
                 break;
             case PlantState.Wilted:
+                myAnimator.SetTrigger("Wilted");
                 break;
         }
 
@@ -69,15 +95,19 @@ public class Plant : MonoBehaviour
         Harvest();
     }
 
-    public void WaterPlant()
+    public void WaterPlant(int points, bool waterIsHealthy)
     {
+        if (!waterIsHealthy) 
+        {
+            PolluteThyself();
+            return;
+        }
+
         // Dead plants can't drink, silly
         if (state == PlantState.Wilted)
             return;
         else
         {
-            isThirsty = false;
-
             switch (state)
             {
                 case PlantState.Seed:
@@ -89,7 +119,10 @@ public class Plant : MonoBehaviour
                     if (currentGrowingStage < numGrowingStages)
                         currentGrowingStage++;
                     else
+                    {
                         state = PlantState.Ripe;
+                        currentGrowingStage++;
+                    }
 
                     break;
                 default:
@@ -101,16 +134,38 @@ public class Plant : MonoBehaviour
         }
     }
 
+    void PolluteThyself() 
+    {
+        health--;
+        score -= pointsLostPerPollution;
+        moneyFromHarvest -= moneyLostPerPollution;
+
+        if (health < 0)
+            state = PlantState.Wilted;
+    }
+
     public void Harvest()
     {
         // Only add score/money if harvested plant is ripe. Otherwise, just destroy it.
         if (state == PlantState.Ripe)
         {
-            GameManager.Instance.AddMoney(money);
+            GameManager.Instance.AddMoney(moneyFromHarvest);
             GameManager.Instance.IncreaseScore(score);
+            AudioManager.Instance.FXPlant();
+            Destroy(gameObject);
+            plantHolder.Harvest();
         }
+        else if (state == PlantState.Wilted)
+        {
+            Destroy(gameObject);
+            AudioManager.Instance.FXPlant();
+            plantHolder.Harvest();
+        }
+    }
 
-        Destroy(gameObject);
+    public PlantState GetState()
+    {
+        return state;
     }
 
     void CheckTimer()
@@ -122,6 +177,5 @@ public class Plant : MonoBehaviour
 
         // double check that we're not still thirsty (should only get here if thirsty, just in case).
         state = PlantState.Wilted;
-        isThirsty = false;
     }
 }
